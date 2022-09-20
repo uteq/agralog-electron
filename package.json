@@ -39,9 +39,9 @@
           "config": {
             "repository": {
               "owner": "uteq",
-              "name": "agralog-app",
-              "draft": true
-            }
+              "name": "agralog-app"
+            },
+            "draft": true
           }
         }
       ],
