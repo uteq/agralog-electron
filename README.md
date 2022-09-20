@@ -10,6 +10,7 @@ This is just a wrapper for the Agralog site inside Electron. Default it will dir
 ## Contribute
 - Github Actions will do run the build workflow all the time to make sure the application can be build
 
+https://docs.npmjs.com/cli/v6/commands/npm-version
 ```shell
 npm version minor
 git push --follow-tags
