@@ -40,7 +40,7 @@
           "config": {
             "repository": {
               "owner": "uteq",
-              "name": "agralog-app"
+              "name": "agralog-electron"
             },
             "draft": true
           }
