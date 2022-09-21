@@ -7,14 +7,17 @@ This is just a wrapper for the Agralog site inside Electron. Default it will dir
 1. Run `npm install`
 2. To startup local environment run `npm start`
 
-## Contribute
-- Github Actions will do run the build workflow all the time to make sure the application can be build
+### Build
+To build the app run `npm run make`. This will build the app in the `out` directory.
 
-https://docs.npmjs.com/cli/v6/commands/npm-version
+### Release
+For release we use Github Actions. Release workflow runs when a tag is created. We can utilize the [npm-version](
+https://docs.npmjs.com/cli/v6/commands/npm-version) command for versioning and creating tags.
 ```shell
-npm version minor
+npm version [ major | minor | patch ]
 git push --follow-tags
 ```
+The download files will be available on the release page.
 
-## Build
-To build the app run `npm run make`. This will build the app in the `out` directory.
+### Credits
+- [Github Actions Setup](https://dev.to/erikhofer/build-and-publish-a-multi-platform-electron-app-on-github-3lnd)
