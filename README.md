@@ -21,3 +21,4 @@ The download files will be available on the release page.
 
 ### Credits
 - [Github Actions Setup](https://dev.to/erikhofer/build-and-publish-a-multi-platform-electron-app-on-github-3lnd)
+- [Menu Items](https://www.electronjs.org/docs/latest/api/menu)
