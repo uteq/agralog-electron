@@ -144,7 +144,6 @@ const createWindow = async () => {
 app.setAboutPanelOptions({
     applicationName: 'Agralog',
     copyright: '©Uteq',
-    applicationVersion: '1.0.0',
     iconPath: __dirname + './assets/icons/',
 });
 
