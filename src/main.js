@@ -3,9 +3,11 @@ const isMac = process.platform === 'darwin';
 const fetch = require('electron-fetch').default;
 let locationMenuItems = [];
 
+const baseUrl = 'https://agralog.nl';
+
 const urlConfig = {
-    api: 'https://agralog.nl/api/locations',
-    launcher: 'https://agralog.nl/launcher',
+    api: `${baseUrl}/api/locations`,
+    launcher: `${baseUrl}/launcher`,
 };
 
 const capitalize = (string) => string && string[0].toUpperCase() + string.slice(1)
