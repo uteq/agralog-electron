@@ -7,7 +7,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [arm-latest]
 #        os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
