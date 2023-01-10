@@ -1,5 +1,4 @@
 const {app, BrowserWindow, Menu} = require('electron');
-const { autoUpdater } = require('electron-updater');
 const isMac = process.platform === 'darwin';
 const fetch = require('electron-fetch').default;
 let locationMenuItems = [];
@@ -74,7 +73,15 @@ const createWindow = async () => {
         {
             label: 'File',
             submenu: [
-                isMac ? {role: 'close'} : {role: 'quit'}
+                isMac ? {role: 'close'} : {role: 'quit'},
+                {
+                    label: 'Nieuw venster',
+                    accelerator: process.platform === 'darwin' ? 'Cmd+N' : 'Ctrl+N',
+                    click() {
+                        createWindow();
+                    },
+
+                }
             ]
         },
         // { role: 'editMenu' }

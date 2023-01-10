@@ -3,6 +3,9 @@
   "productName": "Agralog",
   "version": "1.2.3",
   "description": "Electron app for Agralog",
+  "repository": {
+    "url": "https://github.com/uteq/agralog-electron"
+  },
   "author": {
     "name": "Jesse Hendriks",
     "email": "jesse@uteq.nl"
@@ -24,8 +27,7 @@
     "@electron-forge/maker-squirrel": "^6.0.4",
     "@electron-forge/maker-zip": "^6.0.4",
     "@electron-forge/publisher-github": "^6.0.4",
-    "electron": "^22.0.0",
-    "electron-updater": "^5.3.0"
+    "electron": "^22.0.0"
   },
   "dependencies": {
     "electron-fetch": "^1.7.4",
