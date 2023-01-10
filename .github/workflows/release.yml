@@ -5,13 +5,13 @@ on:
       - 'v*'
 
 jobs:
-  release_mac:
-    name: mac
-    runs-on: macos-12
+  release:
+    runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: false
       matrix:
-        platform: [arm64]
+        os: [macos-latest]
+#        os: [macos-latest, ubuntu-latest, windows-latest]
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -19,28 +19,7 @@ jobs:
           node-version: 16
       - name: install dependencies
         run: npm ci
-      - name: make
-        run: npm run make --arch=x64,arm64
       - name: publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run publish
-
-#  release:
-#    runs-on: ${{ matrix.os }}
-#    strategy:
-#      matrix:
-#        os: [macos-latest]
-##        os: [macos-latest, ubuntu-latest, windows-latest]
-#
-#    steps:
-#      - uses: actions/checkout@v3
-#      - uses: actions/setup-node@v3
-#        with:
-#          node-version: 16
-#      - name: install dependencies
-#        run: npm ci
-#      - name: publish
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        run: npm run publish

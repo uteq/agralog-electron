@@ -2,6 +2,7 @@ module.exports = {
     packagerConfig: {
         icon: 'src/assets/icon.icns',
         executableName: 'Agralog',
+        arch: 'all'
     },
     publishers: [
         {
