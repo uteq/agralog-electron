@@ -1,7 +1,7 @@
 {
   "name": "agralog-app",
   "productName": "Agralog",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Electron app for Agralog",
   "repository": {
     "url": "https://github.com/uteq/agralog-electron"
