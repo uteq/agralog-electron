@@ -17,6 +17,6 @@ jobs:
         with:
           node-version: 16
       - name: install dependencies
-        run: arch -x86_64 npm ci
+        run: npm ci
       - name: build
-        run: arch -x86_64 npm run make
+        run: npm run make
