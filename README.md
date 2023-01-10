@@ -5,7 +5,9 @@ This is just a wrapper for the Agralog site inside Electron. Default it will dir
 
 ## Installation
 1. Run `npm install`
-2. To startup local environment run `npm start`
+2. To startup local environment run `npm start`.
+
+_If you have changes in your file type `rs` to restart the service_.
 
 ### Build
 To build the app run `npm run make`. This will build the app in the `out` directory.
