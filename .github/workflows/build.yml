@@ -3,12 +3,13 @@ on: [push, pull_request]
 
 jobs:
   build:
-    name: mac
-    runs-on: macos-latest
+    runs-on: ${{ matrix.os }}
+
     strategy:
-      fail-fast: false
       matrix:
-        platform: [x64, arm64]
+        os: [macos-latest]
+#        os: [macos-latest, ubuntu-latest, windows-latest]
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -17,4 +18,4 @@ jobs:
       - name: install dependencies
         run: npm ci
       - name: build
-        run: npm run make
+        run: npm run make --arch=x64,arm64
