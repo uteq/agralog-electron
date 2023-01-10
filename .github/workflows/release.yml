@@ -5,23 +5,11 @@ on:
       - 'v*'
 
 jobs:
-  release_mac_x64:
-    runs-on: macos-latest
-    platform: x64
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: install dependencies
-        run: npm ci
-      - name: publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run publish
-  release_mac_arm64:
-    runs-on: macos-latest
-    platform: arm64
+  release_mac:
+    runs-on: macos-12
+    strategy:
+      fail-fast: false
+      platform: [x64, arm64]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
