@@ -7,7 +7,6 @@ on:
 jobs:
   release_mac:
     name: mac
-    needs: modify-plugin-version
     runs-on: macos-12
     strategy:
       fail-fast: false
