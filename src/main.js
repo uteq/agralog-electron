@@ -1,4 +1,5 @@
 const {app, BrowserWindow, Menu} = require('electron');
+const { autoUpdater } = require('electron-updater');
 const isMac = process.platform === 'darwin';
 const fetch = require('electron-fetch').default;
 let locationMenuItems = [];
