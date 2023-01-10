@@ -20,12 +20,9 @@ module.exports = {
         {
             name: '@electron-forge/maker-dmg',
             config: {
+                icon: 'src/assets/icon.icns',
                 // background: './assets/dmg-background.png',
-                format: 'ULFO'
             }
-        },
-        {
-            name: '@electron-forge/maker-zip',
         },
     ]
 }
