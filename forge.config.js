@@ -1,8 +1,7 @@
 module.exports = {
     packagerConfig: {
-        icon: 'src/assets/icon.icns',
+        icon: 'src/assets/icon',
         executableName: 'Agralog',
-        all: true,
     },
     publishers: [
         {
@@ -22,8 +21,14 @@ module.exports = {
             name: '@electron-forge/maker-dmg',
             config: {
                 icon: 'src/assets/icon.icns',
+                name: 'Agralog Installer',
+                overwrite: true,
                 // background: './assets/dmg-background.png',
             }
         },
+        {
+            name: '@electron-forge/maker-zip',
+            config: {}
+        }
     ]
 }
