@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu} = require('electron');
+const {app, BrowserWindow, Menu, globalShortcut} = require('electron');
 const isMac = process.platform === 'darwin';
 const fetch = require('electron-fetch').default;
 let locationMenuItems = [];
@@ -18,6 +18,24 @@ const createWindow = async () => {
         height: 1000,
         icon: __dirname + './assets/icons/icon.icns',
     });
+
+    const setShortcuts = function (){
+        globalShortcut.register('CommandOrControl+N', () => {
+            createWindow();
+        });
+
+        globalShortcut.register('CommandOrControl+R', () => {
+            mainWindow.reload()
+        });
+
+        globalShortcut.register('CommandOrControl+Right', () => {
+            mainWindow.webContents.goForward()
+        });
+
+        globalShortcut.register('CommandOrControl+Left', () => {
+            mainWindow.webContents.goBack()
+        });
+    }
 
     async function fetchLocations() {
         await fetch(urlConfig.api)
@@ -147,7 +165,7 @@ const createWindow = async () => {
     ];
 
     Menu.setApplicationMenu(Menu.buildFromTemplate(template));
-
+    setShortcuts();
     mainWindow.loadURL(urlConfig.launcher);
 };
 
