@@ -19,15 +19,7 @@ const createWindow = async () => {
         icon: __dirname + './assets/icons/icon.icns',
     });
 
-    const setShortcuts = function (){
-        globalShortcut.register('CommandOrControl+N', () => {
-            createWindow();
-        });
-
-        globalShortcut.register('CommandOrControl+R', () => {
-            mainWindow.reload()
-        });
-
+    const setShortcuts = function () {
         globalShortcut.register('CommandOrControl+Right', () => {
             mainWindow.webContents.goForward()
         });
@@ -99,7 +91,21 @@ const createWindow = async () => {
                         createWindow();
                     },
 
-                }
+                },
+                {
+                    label: 'Vorige',
+                    accelerator: process.platform === 'darwin' ? 'Cmd+Left' : 'Ctrl+Left',
+                    click() {
+                        mainWindow.webContents.goBack();
+                    }
+                },
+                {
+                    label: 'Volgende',
+                    accelerator: process.platform === 'darwin' ? 'Cmd+Right' : 'Ctrl+Right',
+                    click() {
+                        mainWindow.webContents.goForward();
+                    }
+                },
             ]
         },
         // { role: 'editMenu' }
